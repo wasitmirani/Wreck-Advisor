@@ -198,7 +198,7 @@ var staticRenderFns = [
         attrs: {
           id: "doughnut-chart",
           "data-colors":
-            '["#6951ce", "#ffcc5a", "#34c38f", "#16daf1", "#10dae6"]'
+            '["#000421", "#ffcc5a", "#34c38f", "#16daf1", "#10dae6"]'
         }
       })
     ])

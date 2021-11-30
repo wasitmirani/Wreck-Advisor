@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="flex-shrink-0 text-end dash-widget">
-                            <div id="mini-chart1" data-colors='["#6951ce", "#f04d80"]' class="apex-charts"></div>
+                            <div id="mini-chart1" data-colors='["#000421", "#f04d80"]' class="apex-charts"></div>
                         </div>
                     </div>
                 </div><!-- end card body -->
@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div class="flex-shrink-0 text-end dash-widget">
-                            <div id="mini-chart2" data-colors='["#6951ce", "#f04d80"]' class="apex-charts"></div>
+                            <div id="mini-chart2" data-colors='["#000421", "#f04d80"]' class="apex-charts"></div>
                         </div>
                     </div>
                 </div><!-- end card body -->
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <div class="flex-shrink-0 text-end dash-widget">
-                            <div id="mini-chart3" data-colors='["#6951ce", "#f04d80"]' class="apex-charts"></div>
+                            <div id="mini-chart3" data-colors='["#000421", "#f04d80"]' class="apex-charts"></div>
                         </div>
                     </div>
                 </div><!-- end card body -->
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                         <div class="flex-shrink-0 text-end dash-widget">
-                            <div id="mini-chart4" data-colors='["#6951ce", "#f04d80"]' class="apex-charts"></div>
+                            <div id="mini-chart4" data-colors='["#000421", "#f04d80"]' class="apex-charts"></div>
                         </div>
                     </div>
                 </div><!-- end card body -->
@@ -146,7 +146,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-8">
                             <div>
-                                <div id="market-overview" data-colors='["#6951ce", "#f04d80"]' class="apex-charts"></div>
+                                <div id="market-overview" data-colors='["#000421", "#f04d80"]' class="apex-charts"></div>
                             </div>
                         </div>
                         <div class="col-xl-4">

@@ -56,40 +56,8 @@ class HelperComponent
             ],
 
 
-            [
 
-                "menu" => [
-                    "title" => 'Container',
-                    'can'=>'container-view',
-                    "icon" => "box",
-                    "sub_menu" => [
-                        setSubMenu(
-                            "Receive",
-                            null,
-                            "receive-view",
-                            "/container/receives",
-                        ),
-                        setSubMenu(
-                            "Stuffing",
-                            null,
-                            "stuffing-view",
-                            "/container/stuffing",
-                        ),
-                        setSubMenu(
-                            "Dispatch",
-                             null,
-                            "dispatch-view",
-                            "/container/dispatch",
-                        ),
-
-                    ]
-
-                ],
-
-            ],
-            [
-                "single_link" => setSingleLink("Receipt Pallet GRN", "link", "services-view", "/logout"),
-            ],
+        
 
             [
                 "heading" => "Tool",

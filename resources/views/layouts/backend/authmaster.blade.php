@@ -36,7 +36,7 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
                                         <a href="index.html" class="d-block auth-logo">
-                                            <img src="assets/images/logo-sm.svg" alt="" height="28"> <span class="logo-txt">{{config('app.name')}}</span>
+                                            <img src="{{asset('/assets/images/logo.png')}}" alt="" width="240px"> <span class="logo-txt"></span>
                                         </a>
                                     </div>
                                     @yield('content')

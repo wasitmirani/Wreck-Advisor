@@ -7,7 +7,7 @@
       <div class="card-body">
         <div
           id="doughnut-chart"
-          data-colors='["#6951ce", "#ffcc5a", "#34c38f", "#16daf1", "#10dae6"]'
+          data-colors='["#000421", "#ffcc5a", "#34c38f", "#16daf1", "#10dae6"]'
           class="e-charts"
         ></div>
       </div>

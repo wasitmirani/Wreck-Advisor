@@ -1119,7 +1119,7 @@ var staticRenderFns = [
                   ),
                   _vm._v(" "),
                   _c("h4", { staticClass: "mb-3" }, [
-                    _vm._v("\r\n                                $"),
+                    _vm._v("\n                                $"),
                     _c(
                       "span",
                       {
@@ -1128,7 +1128,7 @@ var staticRenderFns = [
                       },
                       [_vm._v("0")]
                     ),
-                    _vm._v("k\r\n                            ")
+                    _vm._v("k\n                            ")
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "text-nowrap" }, [
@@ -1154,7 +1154,7 @@ var staticRenderFns = [
                       staticClass: "apex-charts",
                       attrs: {
                         id: "mini-chart1",
-                        "data-colors": '["#6951ce", "#f04d80"]'
+                        "data-colors": '["#000421", "#f04d80"]'
                       }
                     })
                   ]
@@ -1211,7 +1211,7 @@ var staticRenderFns = [
                       staticClass: "apex-charts",
                       attrs: {
                         id: "mini-chart2",
-                        "data-colors": '["#6951ce", "#f04d80"]'
+                        "data-colors": '["#000421", "#f04d80"]'
                       }
                     })
                   ]
@@ -1235,7 +1235,7 @@ var staticRenderFns = [
                   ),
                   _vm._v(" "),
                   _c("h4", { staticClass: "mb-3" }, [
-                    _vm._v("\r\n                                $"),
+                    _vm._v("\n                                $"),
                     _c(
                       "span",
                       {
@@ -1244,7 +1244,7 @@ var staticRenderFns = [
                       },
                       [_vm._v("0")]
                     ),
-                    _vm._v("M\r\n                            ")
+                    _vm._v("M\n                            ")
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "text-nowrap" }, [
@@ -1270,7 +1270,7 @@ var staticRenderFns = [
                       staticClass: "apex-charts",
                       attrs: {
                         id: "mini-chart3",
-                        "data-colors": '["#6951ce", "#f04d80"]'
+                        "data-colors": '["#000421", "#f04d80"]'
                       }
                     })
                   ]
@@ -1302,7 +1302,7 @@ var staticRenderFns = [
                       },
                       [_vm._v("0")]
                     ),
-                    _vm._v("%\r\n                            ")
+                    _vm._v("%\n                            ")
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "text-nowrap" }, [
@@ -1328,7 +1328,7 @@ var staticRenderFns = [
                       staticClass: "apex-charts",
                       attrs: {
                         id: "mini-chart4",
-                        "data-colors": '["#6951ce", "#f04d80"]'
+                        "data-colors": '["#000421", "#f04d80"]'
                       }
                     })
                   ]
@@ -1361,7 +1361,7 @@ var staticRenderFns = [
                         },
                         [
                           _vm._v(
-                            "\r\n                                    ALL\r\n                                "
+                            "\n                                    ALL\n                                "
                           )
                         ]
                       ),
@@ -1374,7 +1374,7 @@ var staticRenderFns = [
                         },
                         [
                           _vm._v(
-                            "\r\n                                    1M\r\n                                "
+                            "\n                                    1M\n                                "
                           )
                         ]
                       ),
@@ -1387,7 +1387,7 @@ var staticRenderFns = [
                         },
                         [
                           _vm._v(
-                            "\r\n                                    6M\r\n                                "
+                            "\n                                    6M\n                                "
                           )
                         ]
                       ),
@@ -1400,7 +1400,7 @@ var staticRenderFns = [
                         },
                         [
                           _vm._v(
-                            "\r\n                                    1Y\r\n                                "
+                            "\n                                    1Y\n                                "
                           )
                         ]
                       )
@@ -1416,7 +1416,7 @@ var staticRenderFns = [
                       staticClass: "apex-charts",
                       attrs: {
                         id: "market-overview",
-                        "data-colors": '["#6951ce", "#f04d80"]'
+                        "data-colors": '["#000421", "#f04d80"]'
                       }
                     })
                   ])
@@ -1435,7 +1435,7 @@ var staticRenderFns = [
                             },
                             [
                               _vm._v(
-                                "\r\n                                                1\r\n                                            "
+                                "\n                                                1\n                                            "
                               )
                             ]
                           )
@@ -1471,7 +1471,7 @@ var staticRenderFns = [
                             },
                             [
                               _vm._v(
-                                "\r\n                                                2\r\n                                            "
+                                "\n                                                2\n                                            "
                               )
                             ]
                           )
@@ -1507,7 +1507,7 @@ var staticRenderFns = [
                             },
                             [
                               _vm._v(
-                                "\r\n                                                3\r\n                                            "
+                                "\n                                                3\n                                            "
                               )
                             ]
                           )
@@ -1543,7 +1543,7 @@ var staticRenderFns = [
                             },
                             [
                               _vm._v(
-                                "\r\n                                                4\r\n                                            "
+                                "\n                                                4\n                                            "
                               )
                             ]
                           )
@@ -1579,7 +1579,7 @@ var staticRenderFns = [
                             },
                             [
                               _vm._v(
-                                "\r\n                                                5\r\n                                            "
+                                "\n                                                5\n                                            "
                               )
                             ]
                           )
@@ -3241,7 +3241,7 @@ var staticRenderFns = [
                                 _vm._v(" "),
                                 _c("p", { staticClass: "mb-0" }, [
                                   _vm._v(
-                                    "\r\n                                                        Hi there, How are you?\r\n                                                    "
+                                    "\n                                                        Hi there, How are you?\n                                                    "
                                   )
                                 ])
                               ]),
@@ -3337,7 +3337,7 @@ var staticRenderFns = [
                                 _vm._v(" "),
                                 _c("p", { staticClass: "mb-0" }, [
                                   _vm._v(
-                                    "\r\n                                                        Waiting for your reply.As I heve to go back soon. i have to travel long distance.\r\n                                                    "
+                                    "\n                                                        Waiting for your reply.As I heve to go back soon. i have to travel long distance.\n                                                    "
                                   )
                                 ])
                               ]),
@@ -3429,7 +3429,7 @@ var staticRenderFns = [
                                 _vm._v(" "),
                                 _c("p", { staticClass: "mb-0" }, [
                                   _vm._v(
-                                    "\r\n                                                        Hi, I am coming there in few minutes. Please wait!! I am in taxi right now.\r\n                                                    "
+                                    "\n                                                        Hi, I am coming there in few minutes. Please wait!! I am in taxi right now.\n                                                    "
                                   )
                                 ])
                               ]),
@@ -3537,7 +3537,7 @@ var staticRenderFns = [
                                 _vm._v(" "),
                                 _c("p", { staticClass: "mb-0" }, [
                                   _vm._v(
-                                    "\r\n                                                        Thank You very much, I am waiting here at StarBuck cafe.\r\n                                                    "
+                                    "\n                                                        Thank You very much, I am waiting here at StarBuck cafe.\n                                                    "
                                   )
                                 ])
                               ]),
@@ -3637,7 +3637,7 @@ var staticRenderFns = [
                                 _vm._v(" "),
                                 _c("p", { staticClass: "mb-0" }, [
                                   _vm._v(
-                                    "\r\n                                                        img-1.jpg & img-2.jpg images for a New Projects\r\n                                                    "
+                                    "\n                                                        img-1.jpg & img-2.jpg images for a New Projects\n                                                    "
                                   )
                                 ]),
                                 _vm._v(" "),

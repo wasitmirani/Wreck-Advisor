@@ -5,7 +5,7 @@
         <h4 class="card-title mb-0">{{ title }} Chart</h4>
       </div>
       <div class="card-body">
-        <div :id="'pie-chart' + index" data-colors='["#34c38f", "#0a068c", "#16daf1", "#ffcc5a", "#6951ce"]' class="e-charts"></div>
+        <div :id="'pie-chart' + index" data-colors='["#34c38f", "#0a068c", "#16daf1", "#ffcc5a", "#000421"]' class="e-charts"></div>
       </div>
     </div>
     <!-- end card -->

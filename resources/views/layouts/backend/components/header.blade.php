@@ -5,19 +5,21 @@
             <div class="navbar-brand-box">
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.svg" alt="" height="30">
+                        <img src="assets/images/logo.png" alt="" height="30">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">{{config('app.name')}}</span>
+                        <img src="assets/images/logo.png" alt="" height="24"> <span class="logo-txt">{{config('app.name')}}</span>
                     </span>
                 </a>
 
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.svg" alt="" height="30">
+                        <img src="assets/images/logo-light.png" alt="" height="30">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-sm.svg" alt="" height="24"> <span class="logo-txt">{{config('app.name')}}</span>
+                        <img src="assets/images/logo-light.png" alt="" height="40">
+                        {{-- <span class="logo-txt mt-2" style="font-size: 11px;">
+                            {{config('app.name')}}</span> --}}
                     </span>
                 </a>
             </div>
@@ -144,7 +146,7 @@
                     </div>
                 </div>
             </div> --}}
-{{-- 
+{{--
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon position-relative" id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i data-feather="bell" class="icon-lg"></i>

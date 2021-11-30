@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\frontend\social\GoogleController;
 use App\Http\Controllers\frontend\social\FacebookController;
 use App\Http\Controllers\backend\dashboard\DashboardController;
@@ -40,3 +41,8 @@ Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('callback.gmail');
 Route::get('privacy-policy', [FrontendController::class, 'privacyPolicy']);
 Route::get('/unauthorized', [DashboardController::class, 'unauthorized'])->name('unauthorized');
+
+
+
+Route::get('/', [FrontendController::class, 'index']);
+Route::get('about-us', [FrontendController::class, 'aboutUs']);

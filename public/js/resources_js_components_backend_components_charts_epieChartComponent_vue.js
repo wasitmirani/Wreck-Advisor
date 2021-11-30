@@ -194,7 +194,7 @@ var render = function() {
           attrs: {
             id: "pie-chart" + _vm.index,
             "data-colors":
-              '["#34c38f", "#0a068c", "#16daf1", "#ffcc5a", "#6951ce"]'
+              '["#34c38f", "#0a068c", "#16daf1", "#ffcc5a", "#000421"]'
           }
         })
       ])
