@@ -595,6 +595,67 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -638,7 +699,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     isQuery: function isQuery(query) {
       return this.query = query;
     },
-    openModal: function openModal(val) {// this.resetForm();
+    openModal: function openModal(val) {
+      $('.bs-modal-lg').modal('show'); // this.resetForm();
       //    return this.active_modal=val;
     },
     filterData: function filterData(data) {
@@ -2885,18 +2947,36 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _vm._m(0)
+                  _c("div", { staticClass: "col-sm-8" }, [
+                    _c("div", { staticClass: "text-sm-end" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "btn btn-success btn-rounded waves-effect waves-light mb-2 me-2",
+                          attrs: { type: "button" },
+                          on: { click: _vm.openModal }
+                        },
+                        [
+                          _c("i", { staticClass: "mdi mdi-plus me-1" }),
+                          _vm._v(
+                            " Add New Order\n                                                  "
+                          )
+                        ]
+                      )
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("serviceTable", { attrs: { services: _vm.services } }),
-                _vm._v(" "),
-                _vm._m(1)
+                _c("serviceTable", { attrs: { services: _vm.services } })
               ],
               1
             )
           ])
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
     ],
     1
   )
@@ -2906,106 +2986,141 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-8" }, [
-      _c("div", { staticClass: "text-sm-end" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "btn btn-success btn-rounded waves-effect waves-light mb-2 me-2",
-            attrs: { type: "button" }
-          },
-          [
-            _c("i", { staticClass: "mdi mdi-plus me-1" }),
-            _vm._v(" Add New Order")
-          ]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
-      "ul",
-      { staticClass: "pagination pagination-rounded justify-content-end mb-2" },
+      "div",
+      {
+        staticClass: "modal fade bs-modal-lg",
+        attrs: {
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myLargeModalLabel",
+          "aria-hidden": "true"
+        }
+      },
       [
-        _c("li", { staticClass: "page-item disabled" }, [
-          _c(
-            "a",
-            {
-              staticClass: "page-link",
-              attrs: { href: "javascript: void(0);", "aria-label": "Previous" }
-            },
-            [_c("i", { staticClass: "mdi mdi-chevron-left" })]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "page-item active" }, [
-          _c(
-            "a",
-            {
-              staticClass: "page-link",
-              attrs: { href: "javascript: void(0);" }
-            },
-            [_vm._v("1")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "page-item" }, [
-          _c(
-            "a",
-            {
-              staticClass: "page-link",
-              attrs: { href: "javascript: void(0);" }
-            },
-            [_vm._v("2")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "page-item" }, [
-          _c(
-            "a",
-            {
-              staticClass: "page-link",
-              attrs: { href: "javascript: void(0);" }
-            },
-            [_vm._v("3")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "page-item" }, [
-          _c(
-            "a",
-            {
-              staticClass: "page-link",
-              attrs: { href: "javascript: void(0);" }
-            },
-            [_vm._v("4")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "page-item" }, [
-          _c(
-            "a",
-            {
-              staticClass: "page-link",
-              attrs: { href: "javascript: void(0);" }
-            },
-            [_vm._v("5")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "page-item" }, [
-          _c(
-            "a",
-            {
-              staticClass: "page-link",
-              attrs: { href: "javascript: void(0);", "aria-label": "Next" }
-            },
-            [_c("i", { staticClass: "mdi mdi-chevron-right" })]
-          )
+        _c("div", { staticClass: "modal-dialog modal-lg" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c(
+                "h5",
+                {
+                  staticClass: "modal-title",
+                  attrs: { id: "myLargeModalLabel" }
+                },
+                [_vm._v("Create New Service")]
+              ),
+              _vm._v(" "),
+              _c("button", {
+                staticClass: "btn-close",
+                attrs: {
+                  type: "button",
+                  "data-bs-dismiss": "modal",
+                  "aria-label": "Close"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "col-lg-12" }, [
+                _c("div", [
+                  _c("form", [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c("div", { staticClass: "mb-3" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "form-label",
+                              attrs: { for: "formrow-firstname-input" }
+                            },
+                            [_vm._v("Service Name")]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "text",
+                              id: "formrow-firstname-input"
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c("div", { staticClass: "mb-3" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "form-label",
+                              attrs: { for: "formrow-email-input" }
+                            },
+                            [_vm._v("Parent Services")]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "form-control",
+                            attrs: { type: "email", id: "formrow-email-input" }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-6" }, [
+                        _c("div", { staticClass: "mb-3" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "form-label",
+                              attrs: { for: "formrow-password-input" }
+                            },
+                            [_vm._v("Password")]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "password",
+                              id: "formrow-password-input"
+                            }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "form-check" }, [
+                        _c("input", {
+                          staticClass: "form-check-input",
+                          attrs: { type: "checkbox", id: "formrow-customCheck" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticClass: "form-check-label",
+                            attrs: { for: "formrow-customCheck" }
+                          },
+                          [_vm._v("Check me out")]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mt-4" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-primary w-md",
+                          attrs: { type: "submit" }
+                        },
+                        [_vm._v("Submit")]
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
         ])
       ]
     )
