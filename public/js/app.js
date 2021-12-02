@@ -2097,7 +2097,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuesax_dist_vuesax_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuesax/dist/vuesax.css */ "./node_modules/vuesax/dist/vuesax.css");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -2110,9 +2109,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 
 
 
-
 window.Swal = (sweetalert2__WEBPACK_IMPORTED_MODULE_3___default());
-vue__WEBPACK_IMPORTED_MODULE_4__["default"].use((vuesax__WEBPACK_IMPORTED_MODULE_1___default()));
+Vue.use((vuesax__WEBPACK_IMPORTED_MODULE_1___default()));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -2121,15 +2119,15 @@ vue__WEBPACK_IMPORTED_MODULE_4__["default"].use((vuesax__WEBPACK_IMPORTED_MODULE
 //  const files = require.context('./', true, /\.vue$/i)
 //  files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-vue__WEBPACK_IMPORTED_MODULE_4__["default"].component('avatar-component', __webpack_require__(/*! ./components/backend/components/avatarComponent.vue */ "./resources/js/components/backend/components/avatarComponent.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_4__["default"].directive('can', function (el, binding, vnode) {
+Vue.component('avatar-component', __webpack_require__(/*! ./components/backend/components/avatarComponent.vue */ "./resources/js/components/backend/components/avatarComponent.vue")["default"]);
+Vue.directive('can', function (el, binding, vnode) {
   if (permissions.indexOf(binding.value) !== -1) {
     return vnode.elm.hidden = false;
   } else {
     return vnode.elm.hidden = true;
   }
 });
-var app = new vue__WEBPACK_IMPORTED_MODULE_4__["default"]({
+var app = new Vue({
   el: '#app',
   router: _router__WEBPACK_IMPORTED_MODULE_0__["default"],
   methods: {
@@ -2282,6 +2280,15 @@ var routes = [{
   name: "Users",
   meta: {
     permissions: "users-view"
+  }
+}, {
+  path: "/services",
+  component: function component() {
+    return setComponent("service/Services");
+  },
+  name: "Services",
+  meta: {
+    permissions: "services-view"
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -65447,6 +65454,26 @@ var map = {
 		9,
 		"resources_js_components_backend_pages_error_404Component_vue"
 	],
+	"./components/backend/pages/service/ServiceTable": [
+		"./resources/js/components/backend/pages/service/ServiceTable.vue",
+		9,
+		"resources_js_components_backend_pages_service_ServiceTable_vue"
+	],
+	"./components/backend/pages/service/ServiceTable.vue": [
+		"./resources/js/components/backend/pages/service/ServiceTable.vue",
+		9,
+		"resources_js_components_backend_pages_service_ServiceTable_vue"
+	],
+	"./components/backend/pages/service/ServicesComponent": [
+		"./resources/js/components/backend/pages/service/ServicesComponent.vue",
+		9,
+		"resources_js_components_backend_pages_service_ServicesComponent_vue"
+	],
+	"./components/backend/pages/service/ServicesComponent.vue": [
+		"./resources/js/components/backend/pages/service/ServicesComponent.vue",
+		9,
+		"resources_js_components_backend_pages_service_ServicesComponent_vue"
+	],
 	"./components/backend/pages/user/UsersComponent": [
 		"./resources/js/components/backend/pages/user/UsersComponent.vue",
 		9,
@@ -65644,7 +65671,7 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\laragon\\\\www\\\\
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_SearchInputComponent_vue":1,"resources_js_components_backend_components_breadcrumbComponent_vue":1,"resources_js_components_backend_components_charts_edoughnutChartComponent_vue":1,"resources_js_components_backend_components_charts_epieChartComponent_vue":1,"resources_js_components_backend_components_miniChartComponent_vue":1,"resources_js_components_backend_components_tableFooterComponent_vue":1,"resources_js_components_backend_pages_dashboard_HomeComponent_vue":1,"resources_js_components_backend_pages_error_401Component_vue":1,"resources_js_components_backend_pages_error_404Component_vue":1,"resources_js_components_backend_pages_user_UsersComponent_vue":1,"resources_js_components_backend_pages_user_UsersTable_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_ExampleComponent_vue":1,"resources_js_components_backend_components_SearchInputComponent_vue":1,"resources_js_components_backend_components_breadcrumbComponent_vue":1,"resources_js_components_backend_components_charts_edoughnutChartComponent_vue":1,"resources_js_components_backend_components_charts_epieChartComponent_vue":1,"resources_js_components_backend_components_miniChartComponent_vue":1,"resources_js_components_backend_components_tableFooterComponent_vue":1,"resources_js_components_backend_pages_dashboard_HomeComponent_vue":1,"resources_js_components_backend_pages_error_401Component_vue":1,"resources_js_components_backend_pages_error_404Component_vue":1,"resources_js_components_backend_pages_service_ServiceTable_vue":1,"resources_js_components_backend_pages_service_ServicesComponent_vue":1,"resources_js_components_backend_pages_user_UsersComponent_vue":1,"resources_js_components_backend_pages_user_UsersTable_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

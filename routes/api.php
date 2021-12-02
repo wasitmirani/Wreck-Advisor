@@ -31,4 +31,6 @@ Route::middleware('auth:sanctum')->prefix('admin')->group(function () {
         Route::resource('permission', PermissionController::class);
         Route::post('/remove-all/permissions',[PermissionController::class,'removeAllPermissions']);
     });
+
+    Route::resource('service', ServiceController::class);
 });

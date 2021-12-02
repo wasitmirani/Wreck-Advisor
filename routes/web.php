@@ -46,3 +46,4 @@ Route::get('/unauthorized', [DashboardController::class, 'unauthorized'])->name(
 
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('about-us', [FrontendController::class, 'aboutUs']);
+Route::get('/listing', [FrontendController::class, 'listing'])->name('listing');

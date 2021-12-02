@@ -11,7 +11,7 @@ import router from "./router";
 import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css'
 import Swal from 'sweetalert2'
-import Vue from "vue";
+
 
 window.Swal = Swal;
 

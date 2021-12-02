@@ -57,7 +57,10 @@ class HelperComponent
 
 
 
-        
+
+            [
+                "single_link" => setSingleLink("Services", "layers", "services-view", "/services"),
+            ],
 
             [
                 "heading" => "Tool",
@@ -94,7 +97,7 @@ class HelperComponent
                 "heading" => "Session",
             ],
             [
-                "single_link" => setSingleLink("Log out", "log-out", "services-view", "/logout"),
+                "single_link" => setSingleLink("Log out", "log-out", "logout-view", "/logout"),
             ],
 
 

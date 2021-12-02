@@ -41,8 +41,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['label', 'name', 'apiurl'],
   data: function data() {
@@ -969,39 +967,33 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "input-group search-area" }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.query,
-            expression: "query"
-          }
-        ],
-        staticClass: "form-control",
-        attrs: { type: "text", id: "default-input", placeholder: _vm.label },
-        domProps: { value: _vm.query },
-        on: {
-          keyup: _vm.searchQuery,
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+    _c("div", { staticClass: "search-box me-2 mb-2 d-inline-block" }, [
+      _c("div", { staticClass: "position-relative" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.query,
+              expression: "query"
             }
-            _vm.query = $event.target.value
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", placeholder: _vm.label },
+          domProps: { value: _vm.query },
+          on: {
+            keyup: _vm.searchQuery,
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.query = $event.target.value
+            }
           }
-        }
-      }),
-      _vm._v(" "),
-      _vm.name
-        ? _c("span", { staticClass: "input-group-text" }, [
-            _c(
-              "a",
-              { attrs: { role: "button" }, on: { click: _vm.searchQuery } },
-              [_c("i", { staticClass: "fas fa-search" })]
-            )
-          ])
-        : _vm._e()
+        }),
+        _vm._v(" "),
+        _c("i", { staticClass: "bx bx-search-alt search-icon" })
+      ])
     ])
   ])
 }
