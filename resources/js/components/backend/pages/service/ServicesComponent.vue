@@ -15,7 +15,7 @@
                                                     v-on:loading="loadingStart($event)"
                                                     v-on:reload="getServices()"
                                                     v-on:filterList="filterData($event)"
-                                                    label="Search Users"></searchInput>
+                                                    label="Search Services"></searchInput>
                                             </div>
                                             <div class="col-sm-8">
                                                 <div class="text-sm-end">
@@ -52,17 +52,12 @@
 
 
                                                 <!--  Large modal example -->
-                                                <div class="modal fade bs-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                                                    aria-hidden="true">
-                                                    <div class="modal-dialog modal-lg">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="myLargeModalLabel">Create New Service</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="col-lg-12">
-                                                <div>
+                                                    <vs-dialog blur v-model="active" width="80%">
+                                                <template #header>
+                                                <h4 class="not-margin">
+                                                    Create New <b>Service</b>
+                                                </h4>
+                                                </template>
 
                                                     <form>
                                                     <div class="row">
@@ -76,39 +71,29 @@
                                                           <div class="col-md-6">
                                                                 <div class="mb-3">
                                                                     <label class="form-label" for="formrow-email-input">Parent Services</label>
-                                                                    <input type="email" class="form-control" id="formrow-email-input">
+                                                                      <vs-select filter color="primary" placeholder="Select" v-model="parent_service">
+                                                                         <vs-option label="Vuesax" value="1">Vuesax</vs-option>
+                                                                        <vs-option label="Vue" value="2">Vue</vs-option>
+                                                                      </vs-select>
                                                                 </div>
                                                          </div>
                                                     </div>
-
                                                         <div class="row">
-
                                                             <div class="col-md-6">
                                                                 <div class="mb-3">
-                                                                    <label class="form-label" for="formrow-password-input">Password</label>
-                                                                    <input type="password" class="form-control" id="formrow-password-input">
+                                                                    <label class="form-label" for="formrow-password-input">Thumbnail</label>
+
                                                                 </div>
                                                             </div>
                                                         </div>
 
 
-                                                        <div class="form-group">
 
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="formrow-customCheck">
-                                                                <label class="form-check-label" for="formrow-customCheck">Check me out</label>
-                                                            </div>
-                                                        </div>
                                                         <div class="mt-4">
                                                             <button type="submit" class="btn btn-primary w-md">Submit</button>
                                                         </div>
                                                     </form>
-                                                </div>
-                                            </div>
-                                                            </div>
-                                                        </div><!-- /.modal-content -->
-                                                    </div><!-- /.modal-dialog -->
-                                                </div><!-- /.modal -->
+                                    </vs-dialog>
 
   </div>
 </template>
@@ -117,13 +102,20 @@
 import breadcrumb from '../../components/breadcrumbComponent.vue';
 import searchInput from "../../components/SearchInputComponent.vue";
 import serviceTable from "./ServiceTable.vue";
+
+
+
 export default {
 components:{breadcrumb,searchInput,serviceTable},
 data(){
     return {
         page_num:1,
         services:{},
+        service:{},
+        parent_service:"",
         loading:false,
+        active:false,
+        files:{},
     };
 },
 methods:{
@@ -136,9 +128,9 @@ methods:{
             return (this.query = query);
           },
           openModal(val){
-              $('.bs-modal-lg').modal('show');
+            //   $('.bs-modal-lg').modal('show');
             // this.resetForm();
-        //    return this.active_modal=val;
+           return this.active=true;
           },
           filterData(data){
             this.services = data.services;
@@ -151,4 +143,8 @@ methods:{
 </script>
 
 <style>
+ .vs-select-content {
+   width: 100%;
+   max-width: 100%;
+   }
 </style>

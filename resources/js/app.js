@@ -11,11 +11,7 @@ import router from "./router";
 import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css'
 import Swal from 'sweetalert2'
-
-
 window.Swal = Swal;
-
-
 Vue.use(Vuesax);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -26,7 +22,7 @@ Vue.use(Vuesax);
 //  files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.component('avatar-component', require('./components/backend/components/avatarComponent.vue').default);
 
-Vue.directive('can', function(el, binding, vnode) {
+Vue.directive('can', function (el, binding, vnode) {
     if (permissions.indexOf(binding.value) !== -1) {
         return vnode.elm.hidden = false;
     } else {
