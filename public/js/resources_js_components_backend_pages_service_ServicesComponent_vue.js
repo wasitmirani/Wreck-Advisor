@@ -2055,7 +2055,43 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("serviceTable", { attrs: { services: _vm.services } })
+                _vm.loading
+                  ? _c(
+                      "content-placeholders",
+                      [
+                        _c("content-placeholders-heading", {
+                          attrs: { img: true }
+                        }),
+                        _vm._v(" "),
+                        _c("content-placeholders-text", {
+                          attrs: { lines: 1 }
+                        }),
+                        _vm._v(" "),
+                        _c("content-placeholders-heading", {
+                          attrs: { img: true }
+                        }),
+                        _vm._v(" "),
+                        _c("content-placeholders-text", {
+                          attrs: { lines: 1 }
+                        }),
+                        _vm._v(" "),
+                        _c("content-placeholders-heading", {
+                          attrs: { img: true }
+                        }),
+                        _vm._v(" "),
+                        _c("content-placeholders-text", {
+                          attrs: { lines: 1 }
+                        }),
+                        _vm._v(" "),
+                        _c("content-placeholders-heading", {
+                          attrs: { img: true }
+                        }),
+                        _vm._v(" "),
+                        _c("content-placeholders-text", { attrs: { lines: 1 } })
+                      ],
+                      1
+                    )
+                  : _c("serviceTable", { attrs: { services: _vm.services } })
               ],
               1
             )

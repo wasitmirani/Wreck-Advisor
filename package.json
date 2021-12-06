@@ -32,6 +32,7 @@
         "moment": "^2.29.1",
         "nelo-mapbox-geocoder": "^1.0.24",
         "sweetalert2": "^11.1.10",
+        "vue-content-placeholders": "^0.2.1",
         "vue-router": "^3.5.3",
         "vue-upload-component": "^2.8.22",
         "vue2-dropzone": "^3.6.0",
