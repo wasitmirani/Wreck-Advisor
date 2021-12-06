@@ -393,8 +393,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       page_num: 1,
-      services: {},
-      service: [],
+      services: [],
+      service: {},
       parent_service: "",
       parent_services: {},
       loading: false,
@@ -1801,7 +1801,9 @@ var render = function() {
           _c(
             "tbody",
             [
-              _vm.services.length <= 0 || !_vm.services
+              (_vm.services.data
+              ? _vm.services.data.length <= 0
+              : !_vm.services)
                 ? _c("tr", [
                     _c(
                       "td",

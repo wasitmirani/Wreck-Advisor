@@ -106,8 +106,8 @@
    data(){
        return {
            page_num:1,
-           services:{},
-           service:[],
+           services:[],
+           service:{},
            parent_service:"",
            parent_services:{},
            loading:false,

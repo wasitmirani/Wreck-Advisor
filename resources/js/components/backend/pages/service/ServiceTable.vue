@@ -19,7 +19,7 @@
             </thead>
             <tbody>
 
-                 <tr  v-if="services.length<=0 || !services">
+                 <tr  v-if=" services.data ? services.data.length<=0 : !services">
                    <td colspan="8">
                         <template>
                         <vs-alert color="warn"    >

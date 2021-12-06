@@ -229,7 +229,9 @@ var render = function() {
           _c(
             "tbody",
             [
-              _vm.services.length <= 0 || !_vm.services
+              (_vm.services.data
+              ? _vm.services.data.length <= 0
+              : !_vm.services)
                 ? _c("tr", [
                     _c(
                       "td",
