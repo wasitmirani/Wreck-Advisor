@@ -8,10 +8,12 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 import router from "./router";
+import moment from "moment";
 import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css'
 import Swal from 'sweetalert2'
 window.Swal = Swal;
+window.moment = moment;
 Vue.use(Vuesax);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,6 +31,19 @@ Vue.directive('can', function (el, binding, vnode) {
         return vnode.elm.hidden = true;
     }
 })
+Vue.filter("date_format", function (value) {
+    if (value) {
+        const date = moment
+            .utc(String(value))
+            .local()
+            .format("DD MMM YYYY");
+        const days = moment
+            .utc(String(value))
+            .local()
+            .fromNow("DD MMM YYYY");
+        return date;
+    }
+});
 const app = new Vue({
     el: '#app',
     router,

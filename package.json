@@ -29,6 +29,7 @@
         "@mapbox/mapbox-gl-geocoder": "^4.7.4",
         "dropzone-vue": "^0.1.11",
         "mapbox-gl": "^2.5.1",
+        "moment": "^2.29.1",
         "nelo-mapbox-geocoder": "^1.0.24",
         "sweetalert2": "^11.1.10",
         "vue-router": "^3.5.3",

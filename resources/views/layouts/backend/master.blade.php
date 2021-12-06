@@ -207,7 +207,14 @@
 // window.appname={!! json_encode(config('app.name'),true)!!};
      @auth
 
-          window.user = [];
+            window.user = {!! json_encode(Auth::user(), true) !!};
+        //  window.permissions = {!! json_encode(Auth::user()->permissions->pluck('name'), true) !!};
+        //  let roles_permissions = {!! json_encode(Auth::user()->getPermissionsViaRoles()->pluck('name'), true) !!};
+        //  roles_permissions.map((item)=>{
+        //     if(permissions.indexOf(item) === -1) {
+        //       permissions.push(item);
+        //     }
+        //  });
          window.permissions = ['dashboard-view','user-management-dropdown','users-view','services-view'];
 
      @else

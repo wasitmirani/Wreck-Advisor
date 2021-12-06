@@ -18,7 +18,8 @@ class ServiceController extends Controller
     {
         $q=request('query');
         $services=Service::latest()->where('name', 'like', '%' . $q . '%')->paginate(env('PAR_PAGE'));
-        return response()->json(['services'=>$services]);
+        $parent_services=Service::orderBy('name','asc')->get();
+        return response()->json(['services'=>$services, 'parent_services'=> $parent_services]);
     }
 
     /**
@@ -42,10 +43,10 @@ class ServiceController extends Controller
             $validated = $request->validate([
                 'name' => 'required|unique:services|max:255',
             ]);
-        return Service::create([
-            'name'=>$request->name,
-            'slug'=>Str::snake($request->name, '-'),
-        ]);
+            return Service::create([
+                'name'=>$request->name,
+                'slug'=>Str::snake($request->name, '-'),
+            ]);
     }
 
     /**

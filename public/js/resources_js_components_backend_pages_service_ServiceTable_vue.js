@@ -71,11 +71,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['services'],
   data: function data() {
     return {
       checkAll: []
     };
+  },
+  created: function created() {
+    console.log(this.services.length);
   }
 });
 
@@ -208,68 +222,125 @@ var render = function() {
                 _vm._v("View Details")
               ]),
               _vm._v(" "),
-              _c("th", { staticClass: "align-middle" }, [_vm._v("Action")])
+              _c("th", { staticClass: "align-middle" }, [_vm._v("Action ")])
             ])
           ]),
           _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c(
-                "td",
-                [
-                  _c("vs-checkbox", {
-                    model: {
-                      value: _vm.checkAll,
-                      callback: function($$v) {
-                        _vm.checkAll = $$v
-                      },
-                      expression: "checkAll"
-                    }
+          _c(
+            "tbody",
+            [
+              _vm.services.length <= 0 || !_vm.services
+                ? _c("tr", [
+                    _c(
+                      "td",
+                      { attrs: { colspan: "8" } },
+                      [
+                        [
+                          _c(
+                            "vs-alert",
+                            {
+                              attrs: { color: "warn" },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "icon",
+                                    fn: function() {
+                                      return [
+                                        _c("i", {
+                                          staticClass: "mdi mdi-alert"
+                                        })
+                                      ]
+                                    },
+                                    proxy: true
+                                  },
+                                  {
+                                    key: "title",
+                                    fn: function() {
+                                      return [
+                                        _c(
+                                          "span",
+                                          { staticClass: "text-dark" },
+                                          [_vm._v("Service Not Found")]
+                                        )
+                                      ]
+                                    },
+                                    proxy: true
+                                  }
+                                ],
+                                null,
+                                false,
+                                1285473268
+                              )
+                            },
+                            [
+                              _vm._v(" "),
+                              _vm._v(
+                                "\n                         Service data not found\n                     "
+                              )
+                            ]
+                          )
+                        ]
+                      ],
+                      2
+                    )
+                  ])
+                : _vm._l(_vm.services.data, function(item) {
+                    return _c("tr", { key: item.id }, [
+                      _c(
+                        "td",
+                        [
+                          _c("vs-checkbox", {
+                            model: {
+                              value: _vm.checkAll,
+                              callback: function($$v) {
+                                _vm.checkAll = $$v
+                              },
+                              expression: "checkAll"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "text-body fw-bold",
+                            attrs: { href: "javascript: void(0);" }
+                          },
+                          [_vm._v("#" + _vm._s(item.slug))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.name))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(_vm._f("date_format")(item.created_at)) +
+                            "\n               "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(0, true),
+                      _vm._v(" "),
+                      _vm._m(1, true),
+                      _vm._v(" "),
+                      _vm._m(2, true)
+                    ])
                   })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
-              _c("td", [_vm._v("Neal Matthews")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("Neal Matthews")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  "\n                                                          07 Oct, 2019\n                                                      "
-                )
-              ]),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _vm._m(3)
-            ])
-          ])
+            ],
+            2
+          )
         ]
       )
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c(
-        "a",
-        {
-          staticClass: "text-body fw-bold",
-          attrs: { href: "javascript: void(0);" }
-        },
-        [_vm._v("#SK2540")]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -297,11 +368,7 @@ var staticRenderFns = [
             "data-bs-target": ".orderdetailsModal"
           }
         },
-        [
-          _vm._v(
-            "\n                                                              View Details\n                                                          "
-          )
-        ]
+        [_vm._v("\n                  View Details\n                  ")]
       )
     ])
   },

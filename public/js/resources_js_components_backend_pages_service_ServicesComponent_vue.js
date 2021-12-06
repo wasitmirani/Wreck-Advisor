@@ -237,11 +237,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['services'],
   data: function data() {
     return {
       checkAll: []
     };
+  },
+  created: function created() {
+    console.log(this.services.length);
   }
 });
 
@@ -367,8 +381,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
 
 
 
@@ -382,35 +394,69 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       page_num: 1,
       services: {},
-      service: {},
+      service: [],
       parent_service: "",
+      parent_services: {},
       loading: false,
       active: false,
+      errors: {},
       files: {}
     };
   },
   methods: {
-    getServices: function getServices() {
-      var _arguments = arguments,
-          _this = this;
+    onSubmit: function onSubmit() {
+      var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var page;
+        var url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                page = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;
-                axios.get('/service').then(function (res) {
-                  _this.services = res.data.services;
+                url = "/service";
+                _context.next = 3;
+                return axios.post(url, _this.service).then(function (res) {})["catch"](function (err) {
+                  if (err.response.status == 422) {
+                    _this.errors = err.response.data.errors;
+                    return _this.$root.alertNotificationMessage(err.response.status, err.response.data.errors);
+                  }
+
+                  _this.$root.alertNotificationMessage(err.response.status, err.response.data);
                 });
 
-              case 2:
+              case 3:
               case "end":
                 return _context.stop();
             }
           }
         }, _callee);
+      }))();
+    },
+    getServices: function getServices() {
+      var _arguments = arguments,
+          _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var page;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                page = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;
+                _this2.loading = false;
+                _context2.next = 4;
+                return axios.get('/service').then(function (res) {
+                  _this2.services = res.data.services;
+                  _this2.parent_services = data.parent_services;
+                  _this2.loading = true;
+                });
+
+              case 4:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
       }))();
     },
     isQuery: function isQuery(query) {
@@ -427,6 +473,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     loadingStart: function loadingStart(value) {
       this.loading = value;
     }
+  },
+  created: function created() {
+    this.getServices();
   }
 });
 
@@ -449,7 +498,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.vs-select-content {\n  width: 100%;\n  max-width: 100%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.vs-select-content {\nwidth: 100%;\nmax-width: 100%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1745,68 +1794,125 @@ var render = function() {
                 _vm._v("View Details")
               ]),
               _vm._v(" "),
-              _c("th", { staticClass: "align-middle" }, [_vm._v("Action")])
+              _c("th", { staticClass: "align-middle" }, [_vm._v("Action ")])
             ])
           ]),
           _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c(
-                "td",
-                [
-                  _c("vs-checkbox", {
-                    model: {
-                      value: _vm.checkAll,
-                      callback: function($$v) {
-                        _vm.checkAll = $$v
-                      },
-                      expression: "checkAll"
-                    }
+          _c(
+            "tbody",
+            [
+              _vm.services.length <= 0 || !_vm.services
+                ? _c("tr", [
+                    _c(
+                      "td",
+                      { attrs: { colspan: "8" } },
+                      [
+                        [
+                          _c(
+                            "vs-alert",
+                            {
+                              attrs: { color: "warn" },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "icon",
+                                    fn: function() {
+                                      return [
+                                        _c("i", {
+                                          staticClass: "mdi mdi-alert"
+                                        })
+                                      ]
+                                    },
+                                    proxy: true
+                                  },
+                                  {
+                                    key: "title",
+                                    fn: function() {
+                                      return [
+                                        _c(
+                                          "span",
+                                          { staticClass: "text-dark" },
+                                          [_vm._v("Service Not Found")]
+                                        )
+                                      ]
+                                    },
+                                    proxy: true
+                                  }
+                                ],
+                                null,
+                                false,
+                                1285473268
+                              )
+                            },
+                            [
+                              _vm._v(" "),
+                              _vm._v(
+                                "\n                         Service data not found\n                     "
+                              )
+                            ]
+                          )
+                        ]
+                      ],
+                      2
+                    )
+                  ])
+                : _vm._l(_vm.services.data, function(item) {
+                    return _c("tr", { key: item.id }, [
+                      _c(
+                        "td",
+                        [
+                          _c("vs-checkbox", {
+                            model: {
+                              value: _vm.checkAll,
+                              callback: function($$v) {
+                                _vm.checkAll = $$v
+                              },
+                              expression: "checkAll"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "text-body fw-bold",
+                            attrs: { href: "javascript: void(0);" }
+                          },
+                          [_vm._v("#" + _vm._s(item.slug))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.name))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(_vm._f("date_format")(item.created_at)) +
+                            "\n               "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(0, true),
+                      _vm._v(" "),
+                      _vm._m(1, true),
+                      _vm._v(" "),
+                      _vm._m(2, true)
+                    ])
                   })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
-              _c("td", [_vm._v("Neal Matthews")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("Neal Matthews")]),
-              _vm._v(" "),
-              _c("td", [
-                _vm._v(
-                  "\n                                                          07 Oct, 2019\n                                                      "
-                )
-              ]),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _vm._m(3)
-            ])
-          ])
+            ],
+            2
+          )
         ]
       )
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c(
-        "a",
-        {
-          staticClass: "text-body fw-bold",
-          attrs: { href: "javascript: void(0);" }
-        },
-        [_vm._v("#SK2540")]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -1834,11 +1940,7 @@ var staticRenderFns = [
             "data-bs-target": ".orderdetailsModal"
           }
         },
-        [
-          _vm._v(
-            "\n                                                              View Details\n                                                          "
-          )
-        ]
+        [_vm._v("\n                  View Details\n                  ")]
       )
     ])
   },
@@ -1944,9 +2046,7 @@ var render = function() {
                         },
                         [
                           _c("i", { staticClass: "mdi mdi-plus me-1" }),
-                          _vm._v(
-                            " Add New Order\n                                                  "
-                          )
+                          _vm._v(" Add New Order\n                        ")
                         ]
                       )
                     ])
@@ -1971,9 +2071,7 @@ var render = function() {
               fn: function() {
                 return [
                   _c("h4", { staticClass: "not-margin" }, [
-                    _vm._v(
-                      "\n                                                  Create New "
-                    ),
+                    _vm._v("\n            Create New "),
                     _c("b", [_vm._v("Service")])
                   ])
                 ]
@@ -1991,103 +2089,128 @@ var render = function() {
         },
         [
           _vm._v(" "),
-          _c("form", [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "mb-3" }, [
-                  _c(
-                    "label",
-                    {
-                      staticClass: "form-label",
-                      attrs: { for: "formrow-firstname-input" }
-                    },
-                    [_vm._v("Service Name")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: { type: "text", id: "formrow-firstname-input" }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c(
-                  "div",
-                  { staticClass: "mb-3" },
-                  [
+          _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.onSubmit.apply(null, arguments)
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "mb-3" }, [
                     _c(
                       "label",
                       {
                         staticClass: "form-label",
-                        attrs: { for: "formrow-email-input" }
+                        attrs: { for: "formrow-firstname-input" }
                       },
-                      [_vm._v("Parent Services")]
+                      [_vm._v("Service Name")]
                     ),
                     _vm._v(" "),
-                    _c(
-                      "vs-select",
-                      {
-                        attrs: {
-                          filter: "",
-                          color: "primary",
-                          placeholder: "Select"
-                        },
-                        model: {
-                          value: _vm.parent_service,
-                          callback: function($$v) {
-                            _vm.parent_service = $$v
-                          },
-                          expression: "parent_service"
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.service.name,
+                          expression: "service.name"
                         }
-                      },
-                      [
-                        _c(
-                          "vs-option",
-                          { attrs: { label: "Vuesax", value: "1" } },
-                          [_vm._v("Vuesax")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "vs-option",
-                          { attrs: { label: "Vue", value: "2" } },
-                          [_vm._v("Vue")]
-                        )
                       ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "mb-3" }, [
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "formrow-firstname-input" },
+                      domProps: { value: _vm.service.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.service, "name", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
                   _c(
-                    "label",
-                    {
-                      staticClass: "form-label",
-                      attrs: { for: "formrow-password-input" }
-                    },
-                    [_vm._v("Thumbnail")]
+                    "div",
+                    { staticClass: "mb-3" },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "form-label",
+                          attrs: { for: "formrow-email-input" }
+                        },
+                        [_vm._v("Parent Services")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "vs-select",
+                        {
+                          attrs: {
+                            filter: "",
+                            color: "primary",
+                            placeholder: "Select"
+                          },
+                          model: {
+                            value: _vm.parent_service,
+                            callback: function($$v) {
+                              _vm.parent_service = $$v
+                            },
+                            expression: "parent_service"
+                          }
+                        },
+                        _vm._l(_vm.parent_services, function(item) {
+                          return _c(
+                            "vs-option",
+                            {
+                              key: item.id,
+                              attrs: { label: item.name, value: item.id }
+                            },
+                            [_vm._v(_vm._s(item.name))]
+                          )
+                        }),
+                        1
+                      )
+                    ],
+                    1
                   )
                 ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("div", { staticClass: "mb-3" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-label",
+                        attrs: { for: "formrow-password-input" }
+                      },
+                      [_vm._v("Thumbnail")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-4" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary w-md",
+                    attrs: { type: "submit" }
+                  },
+                  [_vm._v("Submit")]
+                )
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-4" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary w-md",
-                  attrs: { type: "submit" }
-                },
-                [_vm._v("Submit")]
-              )
-            ])
-          ])
+            ]
+          )
         ]
       )
     ],
