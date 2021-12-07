@@ -36,7 +36,7 @@
                         <content-placeholders-heading :img="true" />
                         <content-placeholders-text :lines="1" />
                     </content-placeholders>
-                  <serviceTable :services="services" v-else></serviceTable>
+                  <serviceTable :services="services" :loading="loading" v-else></serviceTable>
                   <!-- <ul class="pagination pagination-rounded justify-content-end mb-2">
                      <li class="page-item disabled">
                          <a class="page-link" href="javascript: void(0);" aria-label="Previous">

@@ -70,7 +70,7 @@
 </template>
 <script>
    export default {
-       props:['services'],
+       props:['services','loading'],
        data(){
            return {
                checkAll:[],

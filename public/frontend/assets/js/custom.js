@@ -1,5 +1,6 @@
 jQuery( document ).ready(function($) {
-      jQuery("#slider-id").slick({
+    /*banner page */
+          jQuery("#slider-id").slick({
         autoplay: true,
         arrows:false,
         dots: true,
@@ -30,4 +31,31 @@ jQuery( document ).ready(function($) {
         }
         }]
         });
-      });
+      /*banner page */
+
+  /*Sale page */
+  jQuery("#cilent").slick({
+        autoplay: true,
+        arrows:true,
+        dots: false,
+        infinite: true,
+        speed: 4000,
+        slidesToShow: 2,
+        autoplay:false,
+        fade: false,
+        speed: 300,
+        infinite: true,
+        touchThreshold: 100,
+        responsive: [{
+        breakpoint: 500,
+        settings: {
+        dots: false,
+        arrows: true,
+        infinite: false,
+        slidesToShow: 2,
+        slidesToScroll: 2
+        }
+        }]
+        });      
+  /*Sale page */      
+});
