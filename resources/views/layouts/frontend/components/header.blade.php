@@ -18,9 +18,9 @@
                      <li class="nav-item">
                     <a class="nav-link" href="{{route('listing')}}">Listing</a>
                   </li>
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                     <a class="nav-link" href="#">What We Do</a>
-                  </li>
+                  </li> --}}
                   <li class="nav-item">
                     <a class="nav-link" href="#">How It Works</a>
                   </li>
