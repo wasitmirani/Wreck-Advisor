@@ -215,7 +215,7 @@
         //       permissions.push(item);
         //     }
         //  });
-         window.permissions = ['dashboard-view','user-management-dropdown','users-view','services-view'];
+         window.permissions = ['dashboard-view','user-management-dropdown','users-view','services-view','listing-view'];
 
      @else
          window.user = [];
