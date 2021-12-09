@@ -36,7 +36,7 @@
                         <content-placeholders-heading :img="true" />
                         <content-placeholders-text :lines="1" />
                     </content-placeholders>
-                  <serviceTable :services="services" :loading="loading" v-else></serviceTable>
+                  <serviceTable :services="services" :loading="loading"   v-on:editItem="editItem($event)" v-on:deleteItem="deleteItem($event)" v-else></serviceTable>
                   <!-- <ul class="pagination pagination-rounded justify-content-end mb-2">
                      <li class="page-item disabled">
                          <a class="page-link" href="javascript: void(0);" aria-label="Previous">
@@ -85,7 +85,7 @@
             <div class="row">
                <div class="col-md-6">
                   <div class="mb-3">
-                     <label class="form-label" for="formrow-password-input">Thumbnail</label>
+                     <!-- <label class="form-label" for="formrow-password-input">Thumbnail</label> -->
                   </div>
                </div>
             </div>
@@ -117,10 +117,18 @@
        };
    },
    methods:{
+            resetForm(){
+                this.service={};
+                this.parent_service="";
+                this.active=false;
+            },
             async onSubmit(){
                 const url="/service";
-              await  axios.post(url,this.service).then((res)=>{
-
+                let data={...this.service,parent_id:this.parent_service};
+                 await axios.post(url,data).then((res)=>{
+                        this.resetForm();
+                        this.getServices();
+                        this.$root.alertNotificationMessage(res.status,'New service has been created successfully');
                     }).catch((err)=>{
                         if(err.response.status==422){
                             this.errors=err.response.data.errors;
@@ -131,19 +139,55 @@
 
             },
            async getServices(page=1){
-               this.loading=false;
+               this.loading=true;
               await axios.get('/service').then((res)=>{
                    this.services=res.data.services;
-                   this.parent_services=data.parent_services
-                   this.loading=true;
+                   this.parent_services=res.data.parent_services;
+                   this.loading=false;
                });
            },
-            isQuery(query) {
+           findParentService(id){
+              return this.parent_services.findIndex(x => x.id === id);
+           },
+           editItem(item){
+            this.service=item;
+            this.parent_service=this.findParentService(item.id);
+            this.active=true;
+           },
+           deleteItem(item){
+                 Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        axios.delete('/service/'+item.id).then((res)=>{
+                              Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                                )
+                         this.getServices();
+                        }).catch((err)=>{
+                        if(err.response.status==422){
+                            this.errors=err.response.data.errors;
+                            return this.$root.alertNotificationMessage(err.response.status,err.response.data.errors);
+                        }
+                          this.$root.alertNotificationMessage(err.response.status,err.response.data);
+                      });
+                    }
+                })
+           },
+           isQuery(query) {
                return (this.query = query);
-             },
-             openModal(val){
+            },
+            openModal(val){
                //   $('.bs-modal-lg').modal('show');
-               // this.resetForm();
+               this.resetForm();
               return this.active=true;
              },
              filterData(data){

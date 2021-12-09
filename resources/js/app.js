@@ -26,7 +26,7 @@ Vue.use(VueContentPlaceholders)
 //  const files = require.context('./', true, /\.vue$/i)
 //  files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.component('avatar-component', require('./components/backend/components/avatarComponent.vue').default);
-
+Vue.component('pagination', require('laravel-vue-pagination'));
 Vue.directive('can', function (el, binding, vnode) {
     if (permissions.indexOf(binding.value) !== -1) {
         return vnode.elm.hidden = false;
@@ -66,7 +66,7 @@ const app = new Vue({
                     this.alertNotification('top-right', 'danger', `Oops, Something Went Wrong ${status} Error! `, res.message);
                     break;
                 case 422:
-                    this.alertNotification('top-right', 'danger', `Oops, Unprocessable Entity ${status} Error! `, res);
+                    this.alertNotification('top-right', 'danger', `Oops, Unprocessable Entity ${status} Error! `, JSON.stringify(res));
 
                     break;
                 case 200:

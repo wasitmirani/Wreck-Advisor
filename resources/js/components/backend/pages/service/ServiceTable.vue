@@ -39,7 +39,7 @@
                      <vs-checkbox v-model="checkAll">
                      </vs-checkbox>
                   </td>
-                  <td><a href="javascript: void(0);" class="text-body fw-bold">#{{item.slug}}</a> </td>
+                  <td><a href="javascript: void(0);" class="text-body fw-bold">#{{item.id}}</a> </td>
                   <td>{{item.name}}</td>
                   <td>{{item.name}}</td>
                   <td>
@@ -51,13 +51,13 @@
                   <td>
                      <!-- Button trigger modal -->
                      <button type="button" class="btn btn-primary btn-sm btn-rounded" data-bs-toggle="modal" data-bs-target=".orderdetailsModal">
-                     View Details
+                      View Details
                      </button>
                   </td>
                   <td>
                      <div class="d-flex gap-3">
-                        <a href="javascript:void(0);" class="text-success"><i class="mdi mdi-pencil font-size-18"></i></a>
-                        <a href="javascript:void(0);" class="text-danger"><i class="mdi mdi-delete font-size-18"></i></a>
+                        <a role="button" @click="editItem(item)"  class="text-success"><i class="mdi mdi-pencil font-size-18"></i></a>
+                        <a role="button" @click="deleteItem(item)" class="text-danger"><i class="mdi mdi-delete font-size-18"></i></a>
                      </div>
                   </td>
                </tr>
@@ -65,18 +65,34 @@
 
             </tbody>
          </table>
+         <hr>
+         <pagination :data="services" @pagination-change-page="getServices"></pagination>
+         <tableFooter :table="services"></tableFooter>
       </div>
    </div>
 </template>
 <script>
+import tableFooter from "../../components/tableFooterComponent.vue"
    export default {
-       props:['services','loading'],
+       components: {tableFooter},
+       props:['services','loading','getServices'],
        data(){
            return {
                checkAll:[],
 
            }
        },
+       methods:{
+            deleteItem(item) {
+
+                return this.$emit("deleteItem", item);
+            },
+            editItem(item) {
+                console.log(item);
+                return this.$emit("editItem", item);
+            },
+       },
+
        created(){
            console.log(this.services.length);
        }

@@ -2,7 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\role\RoleController;
+use App\Http\Controllers\backend\user\UserController;
 use App\Http\Controllers\backend\service\ServiceController;
+use App\Http\Controllers\backend\permission\PermissionController;
 
 /*
 |--------------------------------------------------------------------------
