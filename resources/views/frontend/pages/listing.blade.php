@@ -377,7 +377,7 @@
                        </ul>
                    </div>
                </div>
-       <div class="color-area">
+               <div class="color-area">
                <div class="row">
                    <div class="col-lg-9">
                     <div class="media">
@@ -405,7 +405,7 @@
                </div>
                </div>
                <div class="color-area">
-               <div class="row">
+                 <div class="row">
                    <div class="col-lg-9">
                     <div class="media">
                           <img class="mr-3" src="/frontend/assets/images/rectangle_64.png" alt="Generic placeholder image">
@@ -428,12 +428,12 @@
                     <div class="saleprice">
                        <a href="#">$2,800.00</a>
                    </div>
-               </div>
+                 </div>
                </div>
                </div>
 
                <div class="color-area">
-               <div class="row">
+                <div class="row">
                    <div class="col-lg-9">
                     <div class="media">
                           <img class="mr-3" src="/frontend/assets/images/rectangle_64.png" alt="Generic placeholder image">
@@ -456,7 +456,7 @@
                     <div class="saleprice">
                        <a href="#">$2,800.00</a>
                    </div>
-               </div>
+                 </div>
                </div>
                </div>
                <div class="saleslides">
@@ -546,11 +546,9 @@
                </div>
                </div>
                </div>
-
-
             <!-- col-8 -->
-
         </div>
+    </div>
     </section>
 
 @endsection
