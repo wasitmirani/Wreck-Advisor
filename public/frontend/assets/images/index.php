@@ -13,16 +13,7 @@ include 'inc/header.php';
                   <div class="slider-content">
                     <h1>Why do we use it?</h1>
                     <p>It Is A Long Established Fact That A Reader Will Be Distracted By The Readable Content Of A Page When Looking At Its Layout.</p>
-                    <form action="">
-                      <h2>I want to trade my Wrecked car</h2>
-                      <ul>
-                        <li><input type="text" class="form-control" placeholder="Name"> </li>
-                        <li><input type="tel" class="form-control" placeholder="Phone No"> </li>
-                        <li><input type="text" class="form-control" placeholder="Vehicle No "></li>
-                        <li><input type="file" class="form-control" placeholder="Upload Car Image "></li>
-                        <li><button type="submit" class="btn">SUBMIT NOW</button></li>
-                      </ul>
-                    </form>
+                    <!-- Inquiry MAil -->
                   </div>
                 </div>
               </div>
@@ -219,7 +210,7 @@ include 'inc/header.php';
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>

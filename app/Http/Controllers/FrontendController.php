@@ -23,4 +23,8 @@ class FrontendController extends Controller
 
         return view('frontend.pages.listing');
     }
+
+    public function thankYou(Request $request){
+        return view('frontend.pages.thankyou');
+    }
 }
