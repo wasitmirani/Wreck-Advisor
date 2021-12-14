@@ -66,7 +66,7 @@
             </tbody>
          </table>
          <hr>
-         <pagination :data="services" @pagination-change-page="getServices"></pagination>
+         <pagination :data="services" @pagination-change-page="getServices()"></pagination>
          <tableFooter :table="services"></tableFooter>
       </div>
    </div>

@@ -550,7 +550,11 @@ var render = function() {
         _vm._v(" "),
         _c("pagination", {
           attrs: { data: _vm.services },
-          on: { "pagination-change-page": _vm.getServices }
+          on: {
+            "pagination-change-page": function($event) {
+              return _vm.getServices()
+            }
+          }
         }),
         _vm._v(" "),
         _c("tableFooter", { attrs: { table: _vm.services } })

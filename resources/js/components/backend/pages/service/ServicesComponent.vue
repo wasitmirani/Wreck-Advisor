@@ -147,11 +147,13 @@
                });
            },
            findParentService(id){
-              return this.parent_services.findIndex(x => x.id === id);
+           
+              return this.parent_services.find(x => x.id === id ? x : null);
            },
            editItem(item){
             this.service=item;
-            this.parent_service=this.findParentService(item.id);
+
+            this.parent_service= this.findParentService(item.parent_id) ? this.findParentService(item.parent_id).id : null ;
             this.active=true;
            },
            deleteItem(item){

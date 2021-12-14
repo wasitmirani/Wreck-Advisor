@@ -523,13 +523,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     findParentService: function findParentService(id) {
-      return this.parent_services.findIndex(function (x) {
-        return x.id === id;
+      return this.parent_services.find(function (x) {
+        return x.id === id ? x : null;
       });
     },
     editItem: function editItem(item) {
       this.service = item;
-      this.parent_service = this.findParentService(item.id);
+      this.parent_service = this.findParentService(item.parent_id) ? this.findParentService(item.parent_id).id : null;
       this.active = true;
     },
     deleteItem: function deleteItem(item) {
@@ -2185,7 +2185,11 @@ var render = function() {
         _vm._v(" "),
         _c("pagination", {
           attrs: { data: _vm.services },
-          on: { "pagination-change-page": _vm.getServices }
+          on: {
+            "pagination-change-page": function($event) {
+              return _vm.getServices()
+            }
+          }
         }),
         _vm._v(" "),
         _c("tableFooter", { attrs: { table: _vm.services } })
