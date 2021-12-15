@@ -15,7 +15,8 @@
                     <h1>Why do we use it?</h1>
                     <p>It Is A Long Established Fact That A Reader Will Be Distracted By The Readable Content Of A Page When Looking At Its Layout.</p>
                         {{-- Livewire  Component--}}
-                            <livewire:inquiry-form/>
+                           {{--  <livewire:inquiry-form/> --}}
+                            @livewire('inquiry-form')
                   </div>
                 </div>
               </div>
@@ -31,7 +32,8 @@
                     <h1>Why do we use it?</h1>
                     <p>It Is A Long Established Fact That A Reader Will Be Distracted By The Readable Content Of A Page When Looking At Its Layout.</p>
                             {{-- Livewire  Component--}}
-                            <livewire:inquiry-form/>
+                            {{-- <livewire:inquiry-form/> --}}
+                              @livewire('inquiry-form')
                   </div>
                 </div>
               </div>
