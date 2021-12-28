@@ -27,4 +27,15 @@ class FrontendController extends Controller
     public function thankYou(Request $request){
         return view('frontend.pages.thankyou');
     }
+
+    public function contact(Request $request){
+        return view('frontend.pages.contact');
+    }
+    public function howWorks(Request $request){
+        return view('frontend.pages.howworks');
+    }
+
+    public function blogs(Request $request){
+        return view('frontend.pages.blogs');
+    }
 }

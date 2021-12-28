@@ -27,7 +27,7 @@
 
     <!-- Footer -->
     @include('layouts.frontend.components.footer')
-  @livewireScripts
+    @livewireScripts
     <!-- Footer -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

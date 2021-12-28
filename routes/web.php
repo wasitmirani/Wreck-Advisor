@@ -47,4 +47,10 @@ Route::get('/unauthorized', [DashboardController::class, 'unauthorized'])->name(
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('about-us', [FrontendController::class, 'aboutUs'])->name('about');
 Route::get('/listing', [FrontendController::class, 'listing'])->name('listing');
+Route::get('/contact',[FrontendController::class, 'contact'])->name('contact');
 Route::get('/thankYou',[FrontendController::class, 'thankYou'])->name('thankYou');
+Route::get('/how-it-works', [FrontendController::class, 'howWorks'])->name('howworks');
+Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
+
+
+

@@ -22,13 +22,13 @@
                     <a class="nav-link" href="#">What We Do</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">How It Works</a>
+                    <a class="nav-link" href="{{route('howworks')}}">How It Works</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="{{route('blogs')}}">Blog</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
+                    <a class="nav-link" href="{{route('contact')}}">Contact Us</a>
                   </li>
                 </ul>
               </div>
