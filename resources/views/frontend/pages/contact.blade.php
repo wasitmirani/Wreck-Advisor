@@ -11,6 +11,7 @@
                 <div class="col-lg-12">
                   <div class="slider-content">
                     <h1>Contact Us</h1>
+
                   </div>
                 </div>
               </div>
@@ -26,6 +27,7 @@
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
             <h2 class="sec-heading">SEND US MESSAGE</h2>
+            <h6>Fill This Form Below So We Can Collaborate and Assist You in Discovering Your Best Options!</h6>
           </div>
           <div class="col-sm-12 col-md-10 col-lg-8 m-auto">
 

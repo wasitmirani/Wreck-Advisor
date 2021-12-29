@@ -36,4 +36,5 @@ Route::middleware('auth:sanctum')->prefix('admin')->group(function () {
     });
 
     Route::resource('service', ServiceController::class);
+    Route::resource('listing', ListingController::class);
 });

@@ -27,6 +27,10 @@ const routes = [
         path: "/services", component: () => setComponent("service/Services"), name: "Services",
         meta: { permissions: "services-view" }
     },
+    {
+        path: "/listing", component: () => setComponent("service/Services"), name: "Services",
+        meta: { permissions: "services-view" }
+    },
 
 
 
