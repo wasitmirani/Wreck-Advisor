@@ -178,7 +178,7 @@
                 <div class="img-box "><img src="frontend/assets/images/10.png" class="img-fluid" alt=""></div>
                 <div class="overlay">
                   <h3 class="hd">Part-Exchange Cars</h3>
-                  <p>There Are Many Variations Of Passages Of Lorem Ipsum Available</p>
+                  <p>May it be for a repair or modification, to get new parts for your vehicle; view our options on parts exchange now; we have it all for you and for the best price.</p>
                   <a href="#" class="btn">View More</a>
                 </div>
               </div>
