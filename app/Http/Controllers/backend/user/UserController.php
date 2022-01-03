@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\backend\user;
 
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
@@ -149,5 +153,70 @@ class UserController extends Controller
         return response()->json( $url);
     }
 
+    public function login(Request $request)
+    {
+
+
+
+        $request->validate([
+            'username' => ['required', 'string', 'min:3', 'max:50'],
+            'password' => ['required', 'string', 'min:6'],
+        ]);
+        $input = $request->all();
+        $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        if (auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password']))) {
+
+            $token = auth()->user()->createToken((string)Str::uuid());
+            $token =  $token->plainTextToken;
+            $user = auth()->user();
+            $user = User::where('id', $user->id)->first();
+
+            $user = [
+                'name' => $user->name,
+                'email' => $user->email,
+
+                'thumbnail' => $user->thumbnail,
+                'client' => $user->client,
+            ];
+
+            return response()->json(['user' => $user,  'token' => $token, 'token_type' => 'Bearer'], 200);
+        } else {
+            return response()->json(['error' => 'Unauthorised'], 401);
+        }
+    }
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+        ]);
+
+
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+
+            'password' => bcrypt($request->password)
+        ]);
+
+
+        $token = auth()->user()->createToken((string)Str::uuid());
+        $token =  $token->plainTextToken;
+        $user = User::where('id', $user->id)->first();
+
+
+        $user = [
+            'name' => $user->name,
+            'email' => $user->email,
+            'username' => $user->username,
+            'thumbnail' => $user->thumbnail,
+            'client' => $user->client,
+        ];
+
+        return response()->json(['user' => $user,'token' => $token, 'token_type' => 'Bearer'], 200);
+    }
 
 }
