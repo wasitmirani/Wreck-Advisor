@@ -8,6 +8,7 @@
             <div class="card">
                <div class="card-body">
                   <div class="row mb-2">
+                      
                      <div class="col-sm-4">
                         <searchInput :apiurl="'/service?page=' +this.page_num"
                            v-on:query="isQuery($event)"
@@ -147,7 +148,7 @@
                });
            },
            findParentService(id){
-           
+
               return this.parent_services.find(x => x.id === id ? x : null);
            },
            editItem(item){
