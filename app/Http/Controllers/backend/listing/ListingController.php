@@ -13,7 +13,7 @@ class ListingController extends Controller
     public function storeListing(Request $request){
        $item=Listing::create([
         'title'=>$request->title,
-        'user_id'=>$request->user_id,
+        'user_id'=>$request->user()->id,
         'description'=>$request->description,
         'license'=>$request->license,
         'location'=>$request->location,
