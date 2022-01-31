@@ -25,7 +25,7 @@ class ListingController extends Controller
     }
 
     public function getListings(Request $request){
-        $listings = Listing::latest()->get();
+        $listings = Listing::latest()->where('user_id',$request->user()->id)->get();
         return response()->json(['listings'=>$listings]);
     }
 }
