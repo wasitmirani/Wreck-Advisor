@@ -43,7 +43,10 @@ Route::middleware('auth:sanctum')->prefix('admin')->group(function () {
 
 Route::prefix('app')->group(function () {
     Route::post('/login', [UserController::class, 'login']);
-    Route::post('/listing', [ListingController::class, 'listingStore']);
+    Route::post('/store/listing', [ListingController::class, 'listingStore']);
     Route::get('/listings',[ListingController::class, 'getListings']);
     Route::post('/register',[UserController::class, 'register']);
 });
+
+
+

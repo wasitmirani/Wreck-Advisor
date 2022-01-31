@@ -14,7 +14,8 @@ class ListingController extends Controller
        $item=Listing::create([
         'title'=>$request->title,
         'user_id'=>$request->user()->id,
-        'description'=>$request->description,
+        'car_model'=>$request->car_model,
+        'car_number' => $request->car_number,
         'license'=>$request->license,
         'location'=>$request->location,
         'images'=>json_encode($request->images),
